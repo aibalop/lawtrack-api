@@ -28,4 +28,14 @@ class Permission extends Model
         return $this->belongsToMany(Role::class);
     }
 
+    /**
+     *
+     * Get reference parent
+     *
+     */
+    public function parent()
+    {
+        return $this->belongsTo(Permission::class, 'parent_id');
+    }
+
 }
