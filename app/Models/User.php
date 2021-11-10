@@ -67,11 +67,21 @@ class User extends Authenticatable implements JWTSubject
     /**
      * Get the role associate with the user
      *
-     * @return Role
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function role()
     {
         return $this->belongsTo(Role::class);
+    }
+
+    /**
+     * Get lawyer reference
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function lawyer()
+    {
+        return $this->hasOne(Lawyer::class);
     }
 
 }
