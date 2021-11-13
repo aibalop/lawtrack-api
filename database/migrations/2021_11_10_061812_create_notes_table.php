@@ -20,7 +20,7 @@ class CreateNotesTable extends Migration
             $table->boolean('viewed')->default(false);
             $table->dateTime('viewed_at')->nullable();
             $table->unsignedBigInteger('project_id');
-            $table->foreign('project_id')->references('_id')->on('projects');
+            $table->foreign('project_id')->references('id')->on('projects');
             $table->morphs('notable');
             $table->softDeletes();
             $table->timestamps();
